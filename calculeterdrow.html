@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>CALCULETER</title>
+</head>
+<style>
+   
+    body{
+        background-color: bisque;
+        
+            color: black;
+    }
+    #center{
+        text-align: center;
+        
+    }
+    input{
+
+        border-radius: 50px;
+        border: none;
+        padding: 11px;
+        
+    }
+    .main1 {
+    font-size: 28px;
+}
+input#ac {
+    background-color: orange;
+    color: white;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+input#zero {
+    background-color: black;
+    color: white;
+    padding-right: 49px;
+    
+}
+input#screen {
+    height: 38px;
+    background-color: azure;
+    border: none;
+    border-radius: 13px;
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+button.font {
+    padding: 7px;
+    background-color: white;
+    border-radius: 14px;
+}
+button#closebtn {
+    padding: 10px;
+    color: chocolate;
+    background-color: darkcyan;
+    box-shadow: 8px 4px 5px 3px gray;
+    border: none;
+    border-radius: 20px;
+}
+</style>
+<body>
+    <div class="border">
+    <div id="center">
+        <h1>CASICHO  <button class="font" onclick="black(this)"><i class="fa-solid fa-moon"></i></button></h1>
+       
+        <div>
+            <input type="text" name="number" id="screen" value="">
+        </div>
+        <div class="main1">
+            <input type="button" id="ac" value="AC" onclick="clearscreen()"> 
+            
+            <input type="button" id="modulo" value="%" onclick="celculet(this)">
+            <input type="button" id="divaid" value="/" onclick="celculet(this)">  
+        </div>
+        <div class="main1">
+            <input type="button" id="num7" value=" 7" onclick="celculet(this)">
+            <input type="button" id="num8" value=" 8" onclick="celculet(this)">
+            <input type="button" id="num9" value="9" onclick="celculet(this)"> 
+            <input type="button" id="multipli" value="*" onclick="celculet(this)">  
+        </div>
+        <div class="main1">
+            <input type="button" id="num4" value="4" onclick="celculet(this)"> 
+            <input type="button" id="num5" value=" 5" onclick="celculet(this)">
+            <input type="button" id="num6" value="6" onclick="celculet(this)"> 
+            <input type="button" id="mains" value="-" onclick="celculet(this)">  
+        </div>
+        <div class="main1">
+           <input type="button" id="num1" value="1" onclick="celculet(this)"> 
+           <input type="button" id="num2" value="2" onclick="celculet(this)">
+           <input type="button" id="num3" value="3" onclick="celculet(this)"> 
+           <input type="button" id="plus" value="+" onclick="celculet(this)">  
+        </div>
+        <div class="main1">
+            <input type="button" id="zero" value="0"  onclick="celculet(this)">
+            <input type="button" id="dot" value="." onclick="celculet(this)">
+            
+            <input type="button" id="equal" value="=" onclick="equal()">  
+        </div>
+    </div>
+    <button onclick="hid(this)" id="closebtn">Close</button>
+   
+</div>
+
+
+<script>
+    function celculet(number)
+    {
+        document.getElementById('screen').value+= number.value;
+    }
+
+
+    function clearscreen(){
+        document.getElementById('screen').value=null;
+    }
+
+    function equal(){
+        var sum = document.getElementById('screen').value;
+         var x = document.getElementById('screen').value = eval(sum);
+        
+    }
+
+    
+            function hid(obj) {
+            var x = document.getElementById("center");
+            var btn = document.getElementById("closebtn");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                btn.innerHTML='close';
+                
+            } else {
+                x.style.display = "none";
+                btn.innerHTML='open';
+            }
+
+        }
+        
+
+        
+        
+                function black(obj) {
+                var element = document.body;
+                element.classList.toggle("dark-mode");
+                    }
+
+</script>
+</body>
+</html>
